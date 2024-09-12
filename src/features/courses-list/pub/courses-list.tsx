@@ -17,7 +17,7 @@ export default async function CoursesList({ revalidatePagePath }: Props) {
           key={course.id}
           deleteCourseAction={async () => {
             "use server";
-            deleteCourseAction(revalidatePagePath, course.id);
+            return deleteCourseAction(revalidatePagePath, course.id);
           }}
           course={course}
         />
