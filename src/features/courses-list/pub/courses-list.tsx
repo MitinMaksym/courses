@@ -1,4 +1,3 @@
-import { unstable_cache } from "next/cache";
 import { coursesRepository } from "../courses.repository";
 import { CourseItem } from "../ui/course-item";
 import { deleteCourseAction } from "../actions";
