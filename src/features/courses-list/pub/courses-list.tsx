@@ -6,7 +6,7 @@ type Props = {
   revalidatePagePath: string;
 };
 
-export default async function CoursesList({ revalidatePagePath }: Props) {
+export async function CoursesList({ revalidatePagePath }: Props) {
   const courses = await coursesRepository.getCoursesList();
 
   return (

@@ -14,7 +14,7 @@ import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { createCourseAction } from "../actions";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/ui/utils";
 
 const formSchema = z.object({
   name: z.string().min(1),
@@ -25,7 +25,7 @@ type Props = {
   revalidatePagePath: string;
   className?: string;
 };
-const CreateCourseForm = ({ revalidatePagePath, className }: Props) => {
+export const CreateCourseForm = ({ revalidatePagePath, className }: Props) => {
   const [isLoadingCreate, startCreateTransition] = useTransition();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -82,5 +82,3 @@ const CreateCourseForm = ({ revalidatePagePath, className }: Props) => {
     </Form>
   );
 };
-
-export default CreateCourseForm;
